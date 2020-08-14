@@ -21,7 +21,7 @@ export class ValidatedForm extends Component {
         this.props.history.push('/constructor');
     };
 
-    handleSubmit = () => {
+    handleSubmit = () => {                          ////!!!!!!
         this.setState( state =>{
             const newState = { ...state, validationErrors: {} };
             Object.values(this.formElements).forEach(elem => {
@@ -39,13 +39,13 @@ export class ValidatedForm extends Component {
         });
     };
 
-    registerRef = (element) => {
+    registerRef = (element) => {                         ////!!!!!!
         if (element !== null) {
             this.formElements[element.name] = element;
         }
     };
 
-    renderElement = (modelItem) => {
+    renderElement = (modelItem) => {                         ////!!!!!!
         const name = modelItem.name || modelItem.label.toLowerCase();
         return <div className='form-group' key={ modelItem.label }>
             <label>{ modelItem.label }</label>

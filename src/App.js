@@ -4,7 +4,7 @@ import {Route, Switch} from 'react-router'
 import {Provider} from 'react-redux';
 import {PizzaDataStore} from './data/DataStore';
 import {PizzaConnector} from './components/PizzaConnector';
-import withHeader from './hoc/withHeader';
+import withHeaderFooter from './hoc/withHeaderFooter';
 import {About} from './components/About';
 import {Main} from './components/Main';
 import {Contacts} from './components/Contacts';
@@ -16,10 +16,10 @@ function App() {
         <Provider store={PizzaDataStore}>
             <Router>
                 <Switch>
-                    <Route exact path='/' component={withHeader(Main)}/>
-                    <Route path='/about' component={withHeader(About)}/>
-                    <Route path='/contacts' component={withHeader(Contacts)}/>
-                    <Route path='/constructor' component={withHeader(PizzaConnector)}/>
+                    <Route exact path='/' component={withHeaderFooter(Main)}/>
+                    <Route path='/about' component={withHeaderFooter(About)}/>
+                    <Route path='/contacts' component={withHeaderFooter(Contacts)}/>
+                    <Route path='/constructor' component={withHeaderFooter(PizzaConnector)}/>
                     <Route exact path='/checkout' component={CheckoutConnector}/>
                     <Route exact path='/checkout/thanks' component={Thanks}/>
                 </Switch>

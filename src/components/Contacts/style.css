@@ -21,6 +21,9 @@
   font-size: 20px;
 }
 
+.contacts {
+  padding-bottom: 110px;
+}
 .contacts hr {
   border: none;
   background-color: red;

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {CartDetailsRows} from '../CartDetailsRow';
 import './style.sass';
 import {Link} from 'react-router-dom';
 
-export class Cart extends Component{
+export class Cart extends Component {
 
     render() {
         return <div className='cart'>
@@ -16,15 +16,17 @@ export class Cart extends Component{
                 </tr>
                 </thead>
                 <tbody>
-                <CartDetailsRows cart={ this.props.cart}
-                                 cartCost={ this.props.cartCost }
+                <CartDetailsRows cart={this.props.cart}
+                                 cartCost={this.props.cartCost}
                 />
                 </tbody>
             </table>
 
             <div className='text-center'>
-                <Link to = '/checkout' >
-                   Продолжить
+                <Link to='/checkout'>
+                    <button className='btn btn-primary m-1'>
+                    Продолжить
+                    </button>
                 </Link>
             </div>
         </div>
