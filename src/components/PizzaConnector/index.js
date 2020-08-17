@@ -8,23 +8,21 @@ import { PizzaConstructor } from '../PizzaConstructor';
 
 const mapStateToProps = (dataStore) => ({
     ...dataStore
-})
+});
 
 const mapDispatchToProps = {
     loadData, addToCart_RemoveFromCart, updateCart, clearCart
-}
+};
 
 export const PizzaConnector = connect(mapStateToProps, mapDispatchToProps)(
     class extends Component {
         render() {
             return (<PizzaConstructor {...this.props}
-                                      toppings={this.props.toppings}
-                />
+                                      toppings={this.props.toppings}/>
             )
         }
-
         componentDidMount() {
             this.props.loadData(DataTypes.TOPPINGS);
         }
     }
-)
+);

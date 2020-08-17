@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+footer {
+  margin-top: -1%;
+}
+footer .hr {
+  border: none;
+  background-color: red;
+  color: red;
+  height: 4px;
+}
+footer ul {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 17px;
+  text-align: left;
+  margin-left: 1%;
+}
+footer li {
+  margin: 9px;
+}
+
+/*# sourceMappingURL=style.css.map */

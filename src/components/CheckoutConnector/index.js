@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import {clearCart } from '../../data/CartActionCreators';
-import { connect } from 'react-redux';
-import { Checkout } from '../Checkout';
+import React, {Component} from 'react';
+import {clearCart} from '../../data/CartActionCreators';
+import {connect} from 'react-redux';
+import {ValidatedForm} from "../ValidatedForm";
 
 
 const mapStateToProps = (dataStore) => ({
@@ -14,10 +14,24 @@ const mapDispatchToProps = {
 
 export const CheckoutConnector = connect(mapStateToProps, mapDispatchToProps)(
     class extends Component {
-        render() {
-            return <Checkout {...this.props}/>
+
+        constructor(props) {
+            super(props);
+            this.defaultAttrs = {type: 'text', required: true};
+            this.formModel = [
+                {label: 'Имя'},
+                {label: 'Email', attrs: {type: 'email'}},
+                {label: 'Адрес'},
+                {label: 'Город'},
+                {label: 'Телофон'},
+            ]
         }
 
-
+        render() {
+            return <div className='container-fluid'>
+                <ValidatedForm formModel={this.formModel} {...this.props}
+                               defaultAttrs={this.defaultAttrs}/>
+            </div>
+        }
     }
 );
