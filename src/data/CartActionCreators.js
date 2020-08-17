@@ -10,9 +10,9 @@ export const addToCart_RemoveFromCart = (topping) => ({
 export const updateCart = (topping) => ({
     type: ActionTypes.CART_UPDATE,
     payload: { topping }
-})
+});
 
 export const clearCart = () => ({
     type: ActionTypes.CART_CLEAR
-})
+});
 

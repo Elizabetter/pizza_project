@@ -1,33 +1,33 @@
-.toppingList {
+.topping-list {
   display: grid;
   grid-template-columns: 50% 50%;
   justify-items: center;
 }
-.toppingList img {
+.topping-list img {
   height: 60px;
   display: block;
   margin: auto;
 }
-.toppingList .toppings {
+.topping-list .toppings {
   margin: 10px;
   width: 90%;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.toppingList .active {
+.topping-list .active {
   background-color: lightyellow !important;
 }
 
 @media screen and (max-width: 1350px) {
-  .toppingList {
+  .topping-list {
     grid-template-columns: 1fr;
   }
 }
 @media screen and (max-width: 690px) {
-  .toppingList {
+  .topping-list {
     width: 200px;
   }
-  .toppingList img {
+  .topping-list img {
     height: 30px;
   }
 }

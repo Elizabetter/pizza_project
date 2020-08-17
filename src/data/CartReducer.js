@@ -14,22 +14,12 @@ export const CartReducer = (state, action) => {
 };
 
 const processCartAddRemove = (state, action) => {
-    const t = action.payload.topping;
-    const existing = state.cart.find(item => item.topping.id === t.id);
-    if (existing) {
-        state.cartCost -= existing.topping.cost;
-        state.cart = state.cart.filter(item => item !== existing);
-        return state;
-    } else {
-        state.cart = [...state.cart, action.payload];
-        state.cart = state.cart.map(item => {
-            if (item.topping.id === t.id) {
-                state.cartCost += item.topping.cost;
-                return action.payload;
-            } else {
-                return item;
-            }
-        });
-        return state;
-    }
+     const {cartCost, cart} = state;
+     const t = action.payload.topping;
+     const existing = cart.find(item => item.topping.id === t.id);
+console.log(existing);
+     return existing ?
+         {...state, cart: cart.filter(item => item !== existing), cartCost: cartCost - existing.topping.cost}
+         :
+         {...state, cart: [...cart, action.payload], cartCost: cartCost + t.cost}
 };
